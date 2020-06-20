@@ -1,5 +1,6 @@
-di#include <DS3231.h>
+#include <DS3231.h>
 #include <SD.h>
+DS3231  rtc(SDA, SCL);
 float value=0;
 float rev=0;
 int rpm;
