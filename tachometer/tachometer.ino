@@ -8,7 +8,7 @@ int oldtime=0;
 int time;
 int sum; 
 int i;
-
+File my File;
 void isr() 
 {
 rev++;
@@ -33,9 +33,9 @@ Serial.println("initialization done.");
 
 }
 
-char* filename()
+String filename()
 {
-    char fname[] = rtc.getDateStr();
+    String fname = rtc.getDateStr();
     fname.concat(".txt");
     return fname;  
 } 
@@ -66,7 +66,7 @@ if(i == 6)
   myFile = SD.open(filename(), FILE_WRITE); 
   myFile.println(rtc.getTimeStr());
   myFile.print(" --> ");
-  myFile.print(sum/6)
+  myFile.print(sum/6);
   myFile.close();
   sum=0;
   i=0;
